@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SwitchCookie 账号切换器",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "每标签独立账号身份：Cookie + localStorage 按标签隔离。",
   "homepage_url": "https://github.com/Alleyf/SwitchCookie",
   "options_ui": {
