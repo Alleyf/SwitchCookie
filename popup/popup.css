@@ -57,7 +57,7 @@ body {
   padding: 14px 16px 10px;
 }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.logo { width: 28px; height: 28px; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(99,102,241,0.35)); }
+.logo { width: 30px; height: 30px; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(236,72,153,0.30)); border-radius: 8px; }
 .title { min-width: 0; }
 .title .name { font-weight: 600; font-size: 14px; letter-spacing: 0.2px; }
 .title .host {

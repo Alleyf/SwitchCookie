@@ -354,7 +354,7 @@ async function openSettings() {
   $("lockRow").hidden = !state.encrypted || state.locked;
   $("settingsDialog").hidden = false;
 }
-$("settingsBtn").addEventListener("click", openSettings);
+$("settingsBtn").addEventListener("click", () => { try { chrome.runtime.openOptionsPage(); window.close(); } catch { window.open(chrome.runtime.getURL("options/options.html")); } });
 $("settingsClose").addEventListener("click", () => { $("settingsDialog").hidden = true; });
 $("settingsDialog").querySelector(".dialog-mask").addEventListener("click", () => { $("settingsDialog").hidden = true; });
 $("toggleEncBtn").addEventListener("click", async () => {

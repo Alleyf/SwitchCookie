@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwitchCookie · 设置</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="scBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6366F1"/>
+            <stop offset="1" stop-color="#EC4899"/>
+          </linearGradient>
+          <linearGradient id="scRing" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#38BDF8"/>
+            <stop offset="1" stop-color="#8B5CF6"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#scBg)"/>
+        <g transform="translate(5 4)">
+          <circle cx="8" cy="8" r="7" fill="#FDE68A"/>
+          <circle cx="5.5" cy="6" r="0.9" fill="#7C2D12"/>
+          <circle cx="10.5" cy="5.5" r="0.7" fill="#7C2D12"/>
+          <circle cx="4.5" cy="10" r="0.75" fill="#7C2D12"/>
+          <circle cx="10.5" cy="10.5" r="0.85" fill="#7C2D12"/>
+        </g>
+        <g transform="translate(15 15)">
+          <circle cx="7" cy="7" r="6.2" fill="#FCA5A5"/>
+          <circle cx="4.5" cy="5" r="0.7" fill="#7F1D1D"/>
+          <circle cx="9" cy="4.5" r="0.6" fill="#7F1D1D"/>
+          <circle cx="4" cy="9" r="0.65" fill="#7F1D1D"/>
+          <circle cx="9.5" cy="9.5" r="0.8" fill="#7F1D1D"/>
+        </g>
+        <g transform="translate(16 16)">
+          <circle r="4.2" fill="#ffffff"/>
+          <circle r="4.2" fill="none" stroke="url(#scRing)" stroke-width="0.8"/>
+          <g stroke="#4F46E5" stroke-width="0.9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M -2 -0.9 h 3.4 M 1.4 -0.9 l -0.9 -0.9 M 1.4 -0.9 l -0.9 0.9"/>
+            <path d="M 2 0.9 h -3.4 M -1.4 0.9 l 0.9 -0.9 M -1.4 0.9 l 0.9 0.9"/>
+          </g>
+        </g>
+      </svg>
+      <div class="title-block">
+        <div class="page-title">SwitchCookie</div>
+        <div class="page-sub">设置中心 · <span id="verLabel">v—</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <!-- 安全 · 主密码 -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">安全</div>
+        <div class="card-sub">主密码保护整个账号快照库（AES-GCM + PBKDF2）</div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="row-label">主密码保护</div>
+          <div class="row-hint" id="encStatus">未启用</div>
+        </div>
+        <button class="btn" id="toggleEncBtn">启用</button>
+      </div>
+      <div class="row" id="changePwRow" hidden>
+        <div>
+          <div class="row-label">修改主密码</div>
+          <div class="row-hint">建议定期更换</div>
+        </div>
+        <button class="btn" id="changePwBtn">修改</button>
+      </div>
+      <div class="row" id="lockRow" hidden>
+        <div>
+          <div class="row-label">立即锁定</div>
+          <div class="row-hint">清除内存中的解锁状态</div>
+        </div>
+        <button class="btn" id="lockNowBtn">锁定</button>
+      </div>
+    </section>
+
+    <!-- 关于项目 -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">关于项目</div>
+        <div class="card-sub">每标签 Cookie / localStorage 隔离的账号切换器</div>
+      </div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">名称</div>
+          <div class="info-value">SwitchCookie</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">版本</div>
+          <div class="info-value" id="verValue">—</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">许可证</div>
+          <div class="info-value">MIT</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">技术栈</div>
+          <div class="info-value">MV3 · DNR · webRequest</div>
+        </div>
+      </div>
+      <p class="card-body">
+        SwitchCookie 在同一个浏览器里给每个标签一份独立的登录态。绑定后，该标签所有 HTTP 请求的 Cookie
+        会被改写成保存的账号快照，同时页面 JS 读写 <code>localStorage</code> 走的是标签私有存储，
+        互不干扰。数据全部本地存储，可选主密码加密。
+      </p>
+      <div class="link-row">
+        <a class="link-btn" id="repoLink" href="https://github.com/Alleyf/SwitchCookie" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.47.11-3.07 0 0 .97-.31 3.18 1.19a11.05 11.05 0 0 1 5.8 0c2.21-1.5 3.18-1.19 3.18-1.19.62 1.6.23 2.78.11 3.07.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.14 0 .31.21.68.8.56C20.22 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+          <span>GitHub 仓库</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        <a class="link-btn ghost" id="issuesLink" href="https://github.com/Alleyf/SwitchCookie/issues" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span>反馈问题</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 关于作者 -->
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">关于作者</div>
+        <div class="card-sub">开发者与维护者</div>
+      </div>
+      <div class="author">
+        <div class="author-avatar">A</div>
+        <div class="author-body">
+          <div class="author-name">Alleyf</div>
+          <div class="author-role">Full-stack developer · Chrome 扩展作者</div>
+          <div class="author-links">
+            <a class="link-btn ghost" href="https://github.com/Alleyf" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.47.11-3.07 0 0 .97-.31 3.18 1.19a11.05 11.05 0 0 1 5.8 0c2.21-1.5 3.18-1.19 3.18-1.19.62 1.6.23 2.78.11 3.07.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.14 0 .31.21.68.8.56C20.22 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+              </svg>
+              <span>@Alleyf</span>
+            </a>
+            <a class="link-btn ghost" href="mailto:3035581811@qq.com">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>3035581811@qq.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="card-body soft">
+        感谢使用 SwitchCookie。若你觉得这个工具有帮助，欢迎在 GitHub 点个 Star ⭐；发现问题也随时来 Issues 里反馈。
+      </p>
+    </section>
+
+    <footer class="page-footer">
+      <span>© <span id="yearLabel">2026</span> SwitchCookie</span>
+      <span>Made with ♥ by Alleyf</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- 输入弹层 -->
+  <div class="dialog" id="dialog" hidden>
+    <div class="dialog-mask" data-close></div>
+    <div class="dialog-panel">
+      <div class="dialog-title" id="dialogTitle">输入</div>
+      <input type="password" id="dialogInput" />
+      <div class="dialog-actions">
+        <button class="btn ghost" id="dialogCancel">取消</button>
+        <button class="btn primary" id="dialogOk">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

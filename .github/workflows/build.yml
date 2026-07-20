@@ -1,0 +1,89 @@
+name: Build extension zip
+
+on:
+  push:
+    branches: [ master, main ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    name: Package Chrome / Edge extension
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read version from manifest.json
+        id: meta
+        shell: bash
+        run: |
+          VERSION=$(node -pe "require('./manifest.json').version")
+          NAME="SwitchCookie"
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            SUFFIX="${GITHUB_REF_NAME}"
+          else
+            SUFFIX="v${VERSION}+${GITHUB_SHA::7}"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "artifact=${NAME}-${SUFFIX}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Validate JSON / JS syntax
+        shell: bash
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('manifest.json','utf8'))"
+          node --check background.js
+          node --check content/bridge.js
+          node --check content/shadow.js
+          node --check lib/crypto.js
+          node --check lib/psl.js
+          node --check popup/popup.js
+          node --check options/options.js
+
+      - name: Stage extension files
+        shell: bash
+        run: |
+          set -euo pipefail
+          STAGE="stage"
+          rm -rf "$STAGE" dist
+          mkdir -p "$STAGE" dist
+          # Copy only the runtime files the extension needs.
+          cp manifest.json "$STAGE/"
+          cp background.js "$STAGE/"
+          cp -R content    "$STAGE/"
+          cp -R icons      "$STAGE/"
+          cp -R lib        "$STAGE/"
+          cp -R options    "$STAGE/"
+          cp -R popup      "$STAGE/"
+          [ -f README.md ] && cp README.md "$STAGE/" || true
+          [ -f LICENSE ]   && cp LICENSE   "$STAGE/" || true
+          # Remove editor / OS junk if any slipped in.
+          find "$STAGE" -type f \( -name '.DS_Store' -o -name 'Thumbs.db' -o -name '*.log' \) -delete
+
+      - name: Zip extension
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd stage
+          zip -qr "../dist/${{ steps.meta.outputs.artifact }}" .
+          cd ..
+          ls -la dist
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.artifact }}
+          path: dist/${{ steps.meta.outputs.artifact }}
+          if-no-files-found: error
+
+      - name: Attach zip to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ steps.meta.outputs.artifact }}
+          generate_release_notes: true
