@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwitchCookie · 编辑器</title>
+  <link rel="stylesheet" href="../../popup/popup.css" />
+  <style>
+    html, body { background: #e5e7eb; }
+    body { width: 340px; min-height: 460px; margin: 0 auto; background: var(--bg); box-shadow: 0 8px 30px rgba(0,0,0,.12); }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="scBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#EC4899"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#scBg)"/>
+        <circle cx="12" cy="12" r="5" fill="#FDE68A"/>
+        <circle cx="20" cy="20" r="4.5" fill="#FCA5A5"/>
+      </svg>
+      <div class="title">
+        <div class="name">SwitchCookie</div>
+        <div class="host">github.com · 组: github.com</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" title="返回">←</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="editor">
+      <div class="editor-head">
+        <input type="text" value="工作号" readonly />
+      </div>
+      <div class="tabs">
+        <button class="tab active">Cookie <span class="count">4</span></button>
+        <button class="tab">localStorage <span class="count">3</span></button>
+        <button class="tab">sessionStorage <span class="count">1</span></button>
+      </div>
+      <div class="editor-toolbar">
+        <input type="search" placeholder="搜索名称 / 键..." value="" readonly />
+        <button class="btn small">+ 新增 Cookie</button>
+      </div>
+      <div class="editor-list">
+        <div class="kv-item">
+          <div class="kv-main">
+            <div class="kv-key">user_session</div>
+            <div class="kv-val">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</div>
+            <div class="kv-meta">
+              <span>.github.com/</span>
+              <span>· 2027-01-01 00:00</span>
+              <span>· Secure / HttpOnly</span>
+            </div>
+          </div>
+        </div>
+        <div class="kv-item">
+          <div class="kv-main">
+            <div class="kv-key">_gh_sess</div>
+            <div class="kv-val">BAh7CEkiD3Nlc3Npb25faWQGOgZFVEki...</div>
+            <div class="kv-meta">
+              <span>github.com/</span>
+              <span>· 会话</span>
+              <span>· Secure / SameSite=lax</span>
+            </div>
+          </div>
+        </div>
+        <div class="kv-item">
+          <div class="kv-main">
+            <div class="kv-key">logged_in</div>
+            <div class="kv-val">yes</div>
+            <div class="kv-meta">
+              <span>.github.com/</span>
+              <span>· 2026-12-31 23:59</span>
+              <span>· Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="kv-item">
+          <div class="kv-main">
+            <div class="kv-key">dotcom_user</div>
+            <div class="kv-val">octocat</div>
+            <div class="kv-meta">
+              <span>.github.com/</span>
+              <span>· 2026-12-31 23:59</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer" style="display:flex;gap:8px">
+    <button class="btn ghost" style="flex:1">取消</button>
+    <button class="btn primary" style="flex:1;width:auto">保存修改</button>
+  </footer>
+</body>
+</html>
