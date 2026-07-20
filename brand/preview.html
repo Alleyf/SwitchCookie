@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <title>SwitchCookie · Brand Concepts</title>
+  <style>
+    :root {
+      --bg: #0F1224;
+      --card: #171B31;
+      --text: #E5E7FF;
+      --muted: #9CA3B8;
+      --accent: #8B5CF6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 40px 24px;
+      font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+      background: linear-gradient(135deg, #0F1224 0%, #1E1B4B 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    h1 { font-size: 22px; margin: 0 0 4px; font-weight: 600; }
+    .sub { color: var(--muted); font-size: 13px; margin-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .card h2 { margin: 16px 0 4px; font-size: 15px; font-weight: 600; }
+    .card p { color: var(--muted); font-size: 12px; margin: 0 0 16px; text-align: center; line-height: 1.6; }
+    .stage {
+      width: 100%; aspect-ratio: 1;
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+      gap: 8px; margin-bottom: 8px;
+    }
+    .tile {
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .tile.dark  { background: #0B0E1F; }
+    .tile.light { background: #F8FAFF; }
+    .tile.mid   { background: #6366F1; }
+    .tile.grad  { background: linear-gradient(135deg, #ec4899, #6366f1); }
+    .tile svg { width: 100%; height: 100%; }
+    .row {
+      display: flex; gap: 12px; align-items: center; margin-top: 8px;
+    }
+    .row .size { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--muted); }
+    .row svg { display: block; }
+    .filename { font-family: ui-monospace, Consolas, monospace; font-size: 11px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <h1>SwitchCookie · Brand Concepts</h1>
+  <div class="sub">三个方向，选一个作为主 logo；每个都测试了浅底/深底/彩底/极小尺寸。</div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>方案 A · Cookie Swap</h2>
+      <p>叠层错位的两枚 Cookie + 内嵌切换箭头。<br/>叙事最强，突出「同时保有多个账号」。</p>
+      <div class="stage">
+        <div class="tile light"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg></div>
+        <div class="tile dark"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg></div>
+        <div class="tile mid"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg></div>
+        <div class="tile grad"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg></div>
+      </div>
+      <div class="row">
+        <div class="size"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg><span>16</span></div>
+        <div class="size"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg><span>32</span></div>
+        <div class="size"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo">
+  <defs>
+    <linearGradient id="g-front" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背后一枚（错位 → 表达"切换 / 多账号"） -->
+  <g transform="translate(20 30) rotate(-8 40 40)">
+    <circle cx="40" cy="40" r="36" fill="url(#g-back)" opacity="0.55"/>
+    <circle cx="30" cy="30" r="3.2" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="52" cy="26" r="2.4" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="24" cy="50" r="2.8" fill="#4F3AB4" opacity="0.55"/>
+    <circle cx="50" cy="54" r="2.2" fill="#4F3AB4" opacity="0.55"/>
+  </g>
+
+  <!-- 前面主 Cookie -->
+  <g transform="translate(30 22) rotate(6 40 40)">
+    <circle cx="40" cy="40" r="38" fill="url(#g-front)"/>
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4C1D95" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- 咬一口的缺口 -->
+    <path d="M 76 26
+             a 10 10 0 0 1 -12 12
+             a 8 8 0 0 0 -10 10
+             a 9 9 0 0 1 -12 -12
+             Z"
+          fill="#0F1224" opacity="0.0"/>
+    <path d="M 40 2
+             a 38 38 0 1 1 -38 38
+             a 12 11 0 0 0 14 -6
+             a 9 9 0 0 1 12 -8
+             a 10 10 0 0 0 10 -12
+             a 11 10 0 0 1 12 -12"
+          fill="url(#g-front)"/>
+    <!-- Chocolate chips -->
+    <circle cx="30" cy="34" r="3.6" fill="#1E1B4B"/>
+    <circle cx="48" cy="30" r="2.6" fill="#1E1B4B"/>
+    <circle cx="26" cy="52" r="3.0" fill="#1E1B4B"/>
+    <circle cx="46" cy="52" r="2.2" fill="#1E1B4B"/>
+    <circle cx="38" cy="44" r="2.0" fill="#1E1B4B"/>
+    <!-- 内部切换箭头 -->
+    <g stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(40 40)">
+      <path d="M -10 -3 h 20 l -4 -4 M 10 3 h -20 l 4 4"/>
+    </g>
+  </g>
+</svg><span>48</span></div>
+      </div>
+      <div class="filename">brand/logo-cookie-swap.svg</div>
+    </div>
+
+    <div class="card">
+      <h2>方案 B · Stacked Cookies</h2>
+      <p>Squircle 应用图标风：两块饼干 + 中心切换徽章。<br/>更活泼、辨识度高，适合当 store 图标。</p>
+      <div class="stage">
+        <div class="tile light"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg></div>
+        <div class="tile dark"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg></div>
+        <div class="tile mid"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg></div>
+        <div class="tile grad"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg></div>
+      </div>
+      <div class="row">
+        <div class="size"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg><span>16</span></div>
+        <div class="size"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg><span>32</span></div>
+        <div class="size"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo B">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- squircle 背板 -->
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g2)"/>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2"/>
+
+  <!-- 上层 Cookie -->
+  <g transform="translate(24 22)">
+    <circle cx="30" cy="30" r="26" fill="#FDE68A"/>
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="1.2"/>
+    <circle cx="22" cy="24" r="3.2" fill="#7C2D12"/>
+    <circle cx="38" cy="20" r="2.4" fill="#7C2D12"/>
+    <circle cx="18" cy="38" r="2.6" fill="#7C2D12"/>
+    <circle cx="38" cy="40" r="3.0" fill="#7C2D12"/>
+    <circle cx="30" cy="30" r="1.8" fill="#7C2D12"/>
+  </g>
+
+  <!-- 下层 Cookie -->
+  <g transform="translate(60 60)">
+    <circle cx="24" cy="24" r="22" fill="#FCA5A5"/>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#7F1D1D" stroke-opacity="0.35" stroke-width="1.1"/>
+    <circle cx="16" cy="18" r="2.4" fill="#7F1D1D"/>
+    <circle cx="30" cy="16" r="2.0" fill="#7F1D1D"/>
+    <circle cx="14" cy="30" r="2.2" fill="#7F1D1D"/>
+    <circle cx="32" cy="32" r="2.6" fill="#7F1D1D"/>
+  </g>
+
+  <!-- 中央切换箭头徽章 -->
+  <g transform="translate(64 64)">
+    <circle r="16" fill="#ffffff"/>
+    <circle r="16" fill="none" stroke="url(#g2b)" stroke-width="2"/>
+    <g stroke="#4F46E5" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -7 -3 h 12 M 5 -3 l -3 -3 M 5 -3 l -3 3"/>
+      <path d="M 7 3 h -12 M -5 3 l 3 -3 M -5 3 l 3 3"/>
+    </g>
+  </g>
+</svg><span>48</span></div>
+      </div>
+      <div class="filename">brand/logo-stacked-cookies.svg</div>
+    </div>
+
+    <div class="card">
+      <h2>方案 C · Swap Ring</h2>
+      <p>单枚 Cookie + 中央双向环形箭头。<br/>最简洁、可缩性最好，16px 也清晰。</p>
+      <div class="stage">
+        <div class="tile light"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg></div>
+        <div class="tile dark"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg></div>
+        <div class="tile mid"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg></div>
+        <div class="tile grad"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg></div>
+      </div>
+      <div class="row">
+        <div class="size"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg><span>16</span></div>
+        <div class="size"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg><span>32</span></div>
+        <div class="size"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SwitchCookie logo C">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="g3-highlight" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 单枚 Cookie 主体 -->
+  <circle cx="64" cy="64" r="52" fill="url(#g3)"/>
+  <circle cx="64" cy="64" r="52" fill="url(#g3-highlight)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#312E81" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- 芯片 = 小圆点 -->
+  <circle cx="42" cy="46" r="5" fill="#0F172A"/>
+  <circle cx="80" cy="42" r="3.6" fill="#0F172A"/>
+  <circle cx="86" cy="72" r="4.4" fill="#0F172A"/>
+  <circle cx="46" cy="82" r="3.2" fill="#0F172A"/>
+
+  <!-- 中央双向"切换"环 -->
+  <g transform="translate(64 64)" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round">
+    <!-- 上半圆箭头 -->
+    <path d="M -18 -4 A 18 18 0 0 1 18 -4"/>
+    <path d="M 18 -4 l -5 -5 M 18 -4 l -5 5"/>
+    <!-- 下半圆箭头 -->
+    <path d="M 18 4 A 18 18 0 0 1 -18 4"/>
+    <path d="M -18 4 l 5 -5 M -18 4 l 5 5"/>
+  </g>
+</svg><span>48</span></div>
+      </div>
+      <div class="filename">brand/logo-swap-ring.svg</div>
+    </div>
+  </div>
+</body>
+</html>
