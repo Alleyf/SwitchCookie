@@ -552,7 +552,6 @@ async function bindTab(tabId, hostname, accountId) {
   }
 
   try { await chrome.tabs.reload(tabId); } catch {}
-} catch {}
 }
 
 async function unbindTab(tabId) {
