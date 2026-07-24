@@ -252,10 +252,10 @@ $("addBtn").addEventListener("click", async () => {
 $("logoutBtn").addEventListener("click", async () => {
   if (!state.supported) return;
   const yes = await showConfirm(
-    "清空此标签的登录状态？",
+    "清空此站点登录状态？",
     state.boundAccountId
-      ? "将清空此标签的虚拟身份 Cookie 与本地存储。已保存的账号快照不会被删除。"
-      : "将清空整个浏览器在此站点的 Cookie 与本地存储（会影响其他标签）。"
+      ? "将清空：① 此标签虚拟 Cookie/存储 ② 浏览器在本站及相关 SSO 域的 Cookie ③ localStorage/sessionStorage/IndexedDB/Cache/Service Worker。绑定账号快照会被同步为空（账号卡片仍保留）。"
+      : "将清空浏览器在本站及相关 SSO 域的 Cookie，以及本页 localStorage/sessionStorage/IndexedDB/Cache/Service Worker（会影响同站点其他标签）。"
   );
   if (!yes) return;
   try {

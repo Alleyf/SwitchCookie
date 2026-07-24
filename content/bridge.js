@@ -1,6 +1,6 @@
 // SwitchCookie - ISOLATED world bridge.
-// Talks to background to get the tab's binding, feeds MAIN world proxy,
-// throttles change reports back.
+// Talks to background to fetch this tab's binding, feeds MAIN world proxies,
+// forwards storage / cookie-write events back.
 (() => {
   if (window.__SC_BRIDGE_INSTALLED__) return;
   window.__SC_BRIDGE_INSTALLED__ = true;
@@ -20,24 +20,35 @@
       };
       window.addEventListener("sc:dump-response", handler, { once: true });
       dispatchToPage("sc:dump-request", null);
-      // fallback timeout
       setTimeout(() => resolve({}), 500);
     });
   }
 
   function scheduleSave() {
-    if (!bound) return;
-    if (saveTimer) return;
+    if (!bound || saveTimer) return;
     saveTimer = setTimeout(async () => {
       saveTimer = null;
       try {
         const dump = await requestDump();
-        chrome.runtime.sendMessage({ type: "storageChanged", local: dump }).catch(() => {});
+        chrome.runtime.sendMessage({
+          type: "storageChanged",
+          local: dump.local || {},
+          session: dump.session || {}
+        }).catch(() => {});
       } catch {}
     }, 400);
   }
 
-  window.addEventListener("sc:ls-changed", scheduleSave);
+  window.addEventListener("sc:storage-changed", scheduleSave);
+  window.addEventListener("sc:cookie-write", (e) => {
+    if (!bound) return;
+    const detail = (e && e.detail) || {};
+    chrome.runtime.sendMessage({
+      type: "setCookie",
+      header: detail.header || "",
+      href: detail.href || location.href
+    }).catch(() => {});
+  });
 
   async function init() {
     let bindData = null;
@@ -47,15 +58,17 @@
     } catch { return; }
     if (!bindData || !bindData.bound) return;
     bound = true;
-    dispatchToPage("sc:bind", { local: bindData.storage?.local || {} });
+    dispatchToPage("sc:bind", {
+      local: bindData.storage?.local || {},
+      session: bindData.storage?.session || {}
+    });
   }
 
-  // Listen for updates from the background when the tab is (un)bound while alive.
   chrome.runtime.onMessage.addListener((msg) => {
     if (!msg) return;
     if (msg.type === "sc:apply-binding") {
       bound = true;
-      dispatchToPage("sc:bind", { local: msg.local || {} });
+      dispatchToPage("sc:bind", { local: msg.local || {}, session: msg.session || {} });
     } else if (msg.type === "sc:clear-binding") {
       bound = false;
       dispatchToPage("sc:unbind", null);
